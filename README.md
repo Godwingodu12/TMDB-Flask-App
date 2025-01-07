@@ -91,7 +91,7 @@ pip freeze > requirements.txt
   ```bash
   curl http://127.0.0.1:5000/api/movies/top-rated
   ```
-- **Sample Response**: Similar to the popular movies endpoint.
+
 
 ### 3. **Get Upcoming Movies**
 - **Endpoint**: `/api/movies/upcoming`
@@ -99,8 +99,7 @@ pip freeze > requirements.txt
 - **Sample Request**:
   ```bash
   curl http://127.0.0.1:5000/api/movies/upcoming
-  ```
-- **Sample Response**: Similar to the popular movies endpoint.
+  ``
 
 ### 4. **Search Movies by Title**
 - **Endpoint**: `/api/movies/search`
@@ -126,38 +125,6 @@ pip freeze > requirements.txt
 
 ---
 
-## How to Deploy the Application
-
-### Deploying to Heroku 
-
-1. **Install the Heroku CLI**
-   Follow the instructions from [Heroku CLI](https://devcenter.heroku.com/articles/heroku-cli).
-
-2. **Log In to Heroku**
-   ```bash
-   heroku login
-   ```
-
-3. **Create a Heroku Application**
-   ```bash
-   heroku create
-   ```
-
-4. **Push Your Code to Heroku**
-   ```bash
-   git push heroku main
-   ```
-
-5. **Set Environment Variables**
-   Add your TMDB API key as a config variable:
-   ```bash
-   heroku config:set TMDB_API_KEY=your_api_key_here
-   ```
-
-6. **Access the Application**
-   Visit the URL provided by Heroku.
-
----
 
 ## How to Generate an API Key and Configure It in the Project
 
