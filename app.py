@@ -9,7 +9,7 @@ API_KEY = 'cbae3dccd2886953746d7a003d78e703'
 LANGUAGE = 'en-US'
 BASE_URL = 'https://api.themoviedb.org/3'
 
-@app.route('/')
+@app.route('/api/movies/popular')
 def index():
     # Fetch popular movies from TMDB API
     response = requests.get(f"{BASE_URL}/movie/popular", params={'api_key': API_KEY, 'language': LANGUAGE})
@@ -72,7 +72,7 @@ def get_movie_details(movie_id):
         return jsonify({"error": str(e)}), 500
 
 # Render the home page
-@app.route('/home')
+@app.route('/')
 def home():
     return render_template('index.html')  # You can create a template for the homepage if needed
 
