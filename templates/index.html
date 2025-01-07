@@ -1,1 +1,78 @@
-it works
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TMDB Flask Application</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css">
+    <style>
+        body {
+            background-color: #f8f9fa;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            margin-top: 50px;
+        }
+        .movie-card {
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            margin-bottom: 20px;
+            padding: 15px;
+            background-color: #fff;
+        }
+        .movie-title {
+            font-weight: bold;
+        }
+        .api-links a {
+            margin-right: 15px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1 class="text-center">TMDB Flask Application</h1>
+        <p class="text-center">Welcome to the TMDB Flask app. Explore movie data through the following APIs:</p>
+        
+        <div class="api-links text-center">
+            <a href="/api/movies/popular" class="btn btn-primary">Popular Movies</a>
+            <a href="/api/movies/top-rated" class="btn btn-success">Top-Rated Movies</a>
+            <a href="/api/movies/upcoming" class="btn btn-warning">Upcoming Movies</a>
+            <a href="/api/movies/search?query=inception" class="btn btn-info">Search Movies</a>
+        </div>
+
+        <hr>
+
+        <div id="movie-list">
+            <!-- Movie data will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        // Fetch and display popular movies on the homepage
+        fetch('/')
+            .then(response => response.json())
+            .then(data => {
+                const movieList = document.getElementById('movie-list');
+                if (data.results) {
+                    data.results.forEach(movie => {
+                        const movieCard = document.createElement('div');
+                        movieCard.classList.add('movie-card');
+
+                        movieCard.innerHTML = `
+                            <div class="movie-title">${movie.title}</div>
+                            <div>Release Date: ${movie.release_date}</div>
+                            <div>Rating: ${movie.vote_average}</div>
+                            <div>${movie.overview}</div>
+                        `;
+
+                        movieList.appendChild(movieCard);
+                    });
+                } else {
+                    movieList.innerHTML = `<p class="text-danger">Failed to fetch movie data. Please try again later.</p>`;
+                }
+            })
+           
+    </script>
+</body>
+</html>
+
