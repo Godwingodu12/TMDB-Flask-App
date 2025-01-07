@@ -79,7 +79,7 @@ pip freeze > requirements.txt
               "release_date": "2025-01-01",
               "overview": "A short description."
           },
-          ...
+  
       ]
   }
   ```
@@ -119,7 +119,7 @@ pip freeze > requirements.txt
               "release_date": "2010-07-16",
               "overview": "A mind-bending thriller."
           },
-          ...
+          
       ]
   }
   ```
