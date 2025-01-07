@@ -16,8 +16,8 @@ This project is a Flask-based web application that integrates with the TMDB (The
 
 1. **Clone the Repository**
    ```bash
-   git clone <repository-url>
-   cd TMDB_Project
+   git clone <https://github.com/Godwingodu12/TMDB-Flask-App-url>
+   cd TMDB-Flask-App
    ```
 
 2. **Set Up a Virtual Environment**
